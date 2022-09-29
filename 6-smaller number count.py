@@ -5,8 +5,8 @@ def smallerNumbersThanCurrent(nums):
         """
         new_nums= [0]*len(nums)
         for index, num in enumerate(nums):
-            for i in range(len(nums)-1):
-                if nums[index] > nums[i+1]:
+            for i in range(len(nums)):
+                if nums[index] > nums[i]:
                     new_nums[index] += 1
 
         return new_nums
