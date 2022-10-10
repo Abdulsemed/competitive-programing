@@ -1,4 +1,9 @@
-beg = head
+def deleteDuplicates(self, head):
+        """
+        :type head: ListNode
+        :rtype: ListNode
+        """
+        beg = head
         end = head  
         if end is not None:
             while end.next is not None:
