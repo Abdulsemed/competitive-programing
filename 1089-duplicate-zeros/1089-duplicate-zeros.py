@@ -11,7 +11,6 @@ class Solution:
                 leftPointer += 1
                 arr.pop()
             leftPointer += 1
-        print(arr)
                 
                 
         
