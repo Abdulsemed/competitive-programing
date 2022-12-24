@@ -2,8 +2,6 @@ class Solution:
     def average(self, salary: List[int]) -> float:
         minSalary = salary[0]
         maxSalary = salary[0]
-        maxHolder = salary[0]
-        minHolder = salary[0]
         average = 0
         for money in salary:
             if money > maxSalary:
