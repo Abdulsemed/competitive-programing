@@ -10,9 +10,12 @@ class Solution:
                 left = files[index].index("(")+1
                 content = str(files[index][left:right])
 #                 location is the path of the file with name 
-                location = files[0][:]+"/"+files[index][:left-1]
-                duplicateDict[content].append(location)
+                location = [files[0][:]]
+                location.append("/")
+                location.append(files[index][:left-1])
+                duplicateDict[content].append("".join(location))
                 index -= 1
+                location.pop()
         result = []
         for element in duplicateDict.values():
             if len(element) > 1:
