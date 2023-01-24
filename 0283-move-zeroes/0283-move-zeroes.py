@@ -5,13 +5,15 @@ class Solution:
         """
         if len(nums) > 1:
             beg = 0
-            end = 0
-            while end <= len(nums)-1:
-                if nums[beg] == 0:
-                    nums.append(nums[beg])
-                    nums.pop(beg)
-                else:
+            end = 1
+            while end < len(nums):
+                if  nums[end] != 0 and nums[beg]== 0:
+                    nums[beg], nums[end] = nums[end], nums[beg]
+                    beg += 1
+                elif nums[beg] != 0:
                     beg += 1
                 end += 1
+                    
+                
                 
         
