@@ -10,9 +10,6 @@ class Solution:
             else:
                 left += 1
                 nums[left] = nums[right] 
-                # nums[left+1] = nums[right]
-                # left+=2
-                # right += 1
         left += 1
         
         return left
