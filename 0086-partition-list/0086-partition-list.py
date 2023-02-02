@@ -23,12 +23,6 @@ class Solution:
                 topNode = temp   
         if topNode.val is not None:
             leastNode.next = topNode
-        # while temp:
-        #     # print(temp.val)
-        #     if temp.val >= x:
-        #         leastNode.next = temp
-        #         break
-        #     temp= temp.next
         return header.next
                 
                 
