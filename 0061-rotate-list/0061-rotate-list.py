@@ -3,30 +3,26 @@
 #     def __init__(self, val=0, next=None):
 #         self.val = val
 #         self.next = next
+# implement using the k goes first
+#         then new pointer starts till the first pointer reaches
+# then the first pointer next becomes head
 class Solution:
     def rotateRight(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
-        size = 0
-        temp = head
-        while temp:
-            size += 1
-            temp = temp.next
-        if size >0:
-            k = k%size
-        if k > 0 and size > 0:
-            count = 0
+        if head:
+            size = 1
             temp = head
-            if k+1 == size:
-                k = 0
-            else:
-                k = size - k-1
-            while count < k:
+            while temp.next:
                 temp = temp.next
-                count += 1
-            lastNode = temp.next
-            temp.next = None
-            temp = lastNode
-            while temp and temp.next:
-                temp = temp.next
+                size += 1
             temp.next = head
-            head = lastNode
+            temp = head
+            k = k%size
+            curr = 0
+            k = size - k - 1
+            while curr< k:
+                temp = temp.next
+                curr += 1
+            head = temp.next
+            temp.next = None
         return head
+        
