@@ -14,11 +14,7 @@ class Solution:
         size = len(vals)
         result = [0]*(size)
         for index in range(size):
-            if monstack:
-                while monstack and monstack[-1][0] < vals[index]:
-                    result[monstack.pop()[1]] = vals[index]
-                monstack.append([vals[index], index])
-                
-            else:
-                monstack.append([vals[index], index])
+            while monstack and vals[monstack[-1]] < vals[index]:
+                result[monstack.pop()] = vals[index]
+            monstack.append(index)
         return result
