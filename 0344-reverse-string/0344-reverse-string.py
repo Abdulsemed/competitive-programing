@@ -1,11 +1,14 @@
 class Solution:
+    def reverso(self,s, l, r):
+        if l == r or l > r:
+            return s
+        s= self.reverso(s,l+1, r-1)
+        s[l], s[r] = s[r], s[l]
+        return s
     def reverseString(self, s: List[str]) -> None:
         """
         Do not return anything, modify s in-place instead.
         """
-        left = 0
-        right = len(s)-1
-        while left <= right:
-            s[left], s[right] = s[right], s[left]
-            left += 1
-            right -= 1
+        s = self.reverso(s,0,len(s)-1)
+        return s
+        
