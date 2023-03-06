@@ -1,11 +1,10 @@
 class Solution:
     def shipWithinDays(self, weights: List[int], days: int) -> int:
         left = 1
-        right = sum(weights)
+        maxim = max(weights)
+        right = max(sum(weights),sum(weights)//days,maxim)
         size = len(weights)
         val = 0
-        maxim = max(weights)
-        ans =[]
         while left <= right:
             mid= left + (right-left)//2
             currSum = 0
