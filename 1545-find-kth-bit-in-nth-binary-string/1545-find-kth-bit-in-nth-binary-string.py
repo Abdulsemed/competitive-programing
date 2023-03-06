@@ -1,17 +1,18 @@
 class Solution:
-    def bits(self,s,n):
-        if n ==0:
-            return [0]
-        s = self.bits(s,n-1)
-        
-        temp = s.copy()
-        for index in range(len(s)):
-            if s[index] == 1:
-                s[index] = 0
-            else:
-                s[index] = 1
-        s = temp+[1] + s[::-1]
-        return s
+    def inverse(self,s):
+        if s == "1":
+            return "0"
+        return "1"
+    def bits(self,n,k):
+        if n == 1:
+            return "0"
+        size = (2**n)-1
+        mid = math.ceil(size/2)
+        if k == mid:
+            return "1"
+        elif k < mid:
+            return self.bits(n-1,k)
+        else:
+            return self.inverse(self.bits(n-1,size-k+1))
     def findKthBit(self, n: int, k: int) -> str:
-        arr = self.bits([],n)
-        return str(arr[k-1])
+        return self.bits(n,k)
