@@ -8,19 +8,13 @@ class Solution:
     def __init__(self):
         self.max = 0
     def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
-        if not root:
-            return self.max
-        depthLeft = 0
-        depthRight = 0
-        if root.left:
-            depthLeft = self.depth(root.left,0)
-        if root.right:
-            depthRight = self.depth(root.right,0)
-        self.max = max(self.max,depthLeft+depthRight)
-        self.diameterOfBinaryTree(root.left)
-        self.diameterOfBinaryTree(root.right)
+        
+        self.depth(root)  
         return self.max
-    def depth(self,root,depth):
+    def depth(self,root):
         if root == None:
-            return depth
-        return max(self.depth(root.left,depth+1),self.depth(root.right,depth+1))
+            return 0
+        left = self.depth(root.left)
+        right = self.depth(root.right)
+        self.max = max(self.max,left+right)
+        return max(left, right)+1
