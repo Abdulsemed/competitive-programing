@@ -3,23 +3,21 @@ class Solution:
         lists = []
         answer = []
         for element in words:
-            dict1 = Counter(list(element))
-            val = sorted(dict1.items())
-            lists.append(val[0][1])
+            val = element.count(min(element))
+            lists.append(val)
         # maxim = max(lists)
         minm = min(lists)
         size = len(lists)
         lists.sort()
         qury = []
         for query in queries:
-            dict1 = Counter(list(query))
-            val = sorted(dict1.items())
-            qury.append(val[0][1])
+            val = query.count(min(query))
+            qury.append(val)
             left = 0
             right = size-1
             while left <= right:
                 mid = left + (right-left)//2
-                if lists[mid] <= val[0][1]:
+                if lists[mid] <= val:
                     left = mid + 1
                 else:
                     right = mid - 1
