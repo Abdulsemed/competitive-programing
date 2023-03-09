@@ -7,12 +7,11 @@
 
 class Solution:
     def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
-        list1 = tuple(self.traverse(root,[],p))
-        list2 = tuple(self.traverse(root,[],q))
-        for element in list1:
-            if element in list2:
-                val = element
-        return val
+        list1 = self.traverse(root,[],p)
+        list2 = set(self.traverse(root,[],q))
+        for index in range(len(list1)-1,-1,-1):
+            if list1[index] in list2:
+                return list1[index]
     def traverse(self,root,dict1,target):
         dict1.append(root)
         if root.val == target.val:
