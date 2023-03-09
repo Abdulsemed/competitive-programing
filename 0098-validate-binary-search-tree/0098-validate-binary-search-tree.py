@@ -6,13 +6,18 @@
 #         self.right = right
 class Solution:
     def __init__(self):
-        self.curr = float("-inf")
+        self.path = []
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
-        return self.traverse(root)
+        self.traverse(root)
+        counter = Counter(self.path)
+        if len(counter.keys()) != len(self.path):
+            return False
+        elif sorted(self.path) != self.path:
+            return False
+        return True
     def traverse(self,root):
         if root == None:
-            return True
-        elif not (self.traverse(root.left) and self.curr < root.val):
-            return False
-        self.curr = root.val
-        return self.traverse(root.right)
+            return None
+        self.traverse(root.left)
+        self.path.append(root.val)
+        self.traverse(root.right)
