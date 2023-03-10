@@ -5,18 +5,16 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    def __init__(self):
-        self.count = 0
     def averageOfSubtree(self, root: Optional[TreeNode]) -> int:
-        self.bottomUp(root)
-        return self.count
-    def bottomUp(self,root):
+        return self.bottomUp(root,0)[2]
+    def bottomUp(self,root,count):
         if not root:
-            return (0,0)
-        left,size1 = self.bottomUp(root.left)
-        right,size2 = self.bottomUp(root.right)
+            return (0,0,count)
+        left,size1,count1 = self.bottomUp(root.left,count)
+        right,size2,count2 = self.bottomUp(root.right, count)
         currSum = left+right+root.val
         currSize = size1+size2+1
+        count = count1 + count2
         if currSum//currSize == root.val: 
-            self.count += 1
-        return (currSum,currSize)
+            count += 1
+        return (currSum,currSize,count)
