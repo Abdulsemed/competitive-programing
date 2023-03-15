@@ -6,37 +6,32 @@
 class Solution:
     def sortList(self, head: Optional[ListNode]) -> Optional[ListNode]:
         runner = head
-        lists = []
-        while runner:
-            lists.append(runner.val)
-            runner = runner.next
-        if lists:
-            lists = self.mergesort(lists)
-            runner = head
-            index = 0
-            while runner:
-                runner.val = lists[index]
-                runner = runner.next
-                index += 1
+        if head:
+            return self.mergesort(runner)
         return head
-    def mergesort(self,nums):
-        if len(nums) == 1:
-            return nums
-        size = len(nums)//2
-        leftNums = self.mergesort(nums[:size])
-        rightNums = self.mergesort(nums[size:])
-        left = 0
-        right = 0
-        leftSize = len(leftNums)
-        rightSize = len(rightNums)
-        arr = []
-        while left < leftSize or right < rightSize:
-            val1 = leftNums[left] if left < leftSize else float("inf")
-            val2 = rightNums[right] if right < rightSize else float("inf")
+    def mergesort(self,head):
+        if not head.next:
+            return head
+        temp = head
+        fast = head
+        if fast.next:
+            while fast.next and fast.next.next:
+                temp = temp.next
+                fast = fast.next.next
+            right = temp.next
+        temp.next = None
+        lefthead = self.mergesort(head)
+        righthead = self.mergesort(right)
+        newHead = ListNode(None)
+        temp = newHead
+        while lefthead or righthead:
+            val1 = lefthead.val if lefthead else float("inf")
+            val2 = righthead.val if righthead else float("inf")
             if val1 < val2:
-                arr.append(val1)
-                left += 1
+                temp.next = ListNode(val1)
+                if lefthead: lefthead = lefthead.next
             else:
-                arr.append(val2)
-                right += 1
-        return arr
+                temp.next = ListNode(val2)
+                if righthead: righthead = righthead.next
+            temp = temp.next
+        return newHead.next
