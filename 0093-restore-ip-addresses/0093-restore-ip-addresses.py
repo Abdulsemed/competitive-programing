@@ -11,6 +11,8 @@ class Solution:
         if index >= self.size:
             if len(path) == 4:
                 self.valid.append('.'.join(path))
+        elif len(path) > 4: return
+        
         for idx in range(index, self.size):
             val = s[index:idx+1]
             if str(int(val)) == val and idx - index < 3 and int(val) <= 255:
