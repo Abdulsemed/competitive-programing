@@ -29,6 +29,7 @@ class Solution:
                 continue
             elif nums[index] == nums[pivot]:
                 count += 1
+                continue
             left.append(nums[index])
         if nums[pivot] not in self.topK:
             self.topK[nums[pivot]] = count
