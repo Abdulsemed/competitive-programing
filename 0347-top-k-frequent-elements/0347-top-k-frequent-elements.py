@@ -34,8 +34,5 @@ class Solution:
             self.topK[nums[pivot]] = count
             
         leftArr = self.quicksort(left)
-        rightArr = self.quicksort(right)
-        leftArr.append(nums[pivot])
-        leftArr.extend(rightArr)
-        return leftArr      
+        rightArr = self.quicksort(right)   
         
