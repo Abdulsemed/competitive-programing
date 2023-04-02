@@ -1,17 +1,13 @@
 class Solution:
     def missingNumber(self, nums: List[int]) -> int:
-        index = 0
-        size = len(nums)
-        nums.append(-1)
-        size += 1
-        while index < size:
-            pos = nums[index]
-            if nums[index] == -1:
-                index += 1
-            elif pos != index:
-                nums[pos], nums[index] = nums[index], nums[pos]
-            else:
-                index += 1
-        for index in range(size):
-            if nums[index] == -1:
-                return index
+        holder = 0
+        for element in nums:
+            holder += 2**element
+        count = 0
+        while holder:
+            if holder & 1 == 0:
+                return count
+            count += 1
+            holder >>= 1
+        return count
+        
