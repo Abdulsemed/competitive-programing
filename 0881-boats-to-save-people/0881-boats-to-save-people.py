@@ -3,7 +3,7 @@ class Solution:
         if len(people) == 1 or (sum(people) <= limit and len(people) == 2):
             return 1
         else:
-            people = sorted(people)
+            people.sort()
             beg = 0
             boats = 0
             end = len(people)-1
