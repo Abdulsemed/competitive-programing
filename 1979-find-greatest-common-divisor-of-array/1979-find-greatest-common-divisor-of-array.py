@@ -1,13 +1,15 @@
 class Solution:
     def findGCD(self, nums: List[int]) -> int:
-        return self.gcd(min(nums), max(nums))
+        return self.findgcd(nums)
     def gcd(self,num1, num2):
         if num1 == 0:
             return num2
         return self.gcd(num2 % num1, num1)
+    
     def findgcd(self, nums: List[int]) -> int:
-        minim = min(nums)
-        maxim = max(nums)
+        nums.sort()
+        minim = nums[0]
+        maxim = nums[-1]
         flag = True
         setsA = {minim}
         setsB = {maxim}
@@ -22,5 +24,6 @@ class Solution:
             setsA.add(currA)
             setsB.add(currB)
         return product//currA
+            
             
         
