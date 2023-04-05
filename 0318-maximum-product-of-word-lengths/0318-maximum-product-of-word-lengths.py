@@ -17,16 +17,9 @@ class Solution:
         maxim = 0
         for index in range(len(words)):
             for val in range(len(words)):
-                flag = True
                 if val == index:
                     continue
-                for j in range(len(words[val])):
-                    order = ord(words[val][j]) - ord("a")
-                    check = 1<<order
-                    if check & arr[index][1]:
-                        flag = False
-                        break
-                if flag:
+                if arr[index][1] & arr[val][1] == 0:
                     maxim = max(maxim, arr[val][0]*arr[index][0])
         return maxim
                 
