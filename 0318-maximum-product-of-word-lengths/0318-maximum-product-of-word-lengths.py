@@ -11,9 +11,7 @@ class Solution:
                 if check & mask != 0:
                     continue
                 mask += 2**order
-                newWord.append(words[index][val])
             arr.append((size, mask))
-            words[index] = newWord
         maxim = 0
         for index in range(len(words)):
             for val in range(len(words)):
