@@ -24,7 +24,10 @@ class Solution:
         self.bools = [-1,-1]
         minim = float("inf")
         while r_ptr < len(arr):
-            if arr[r_ptr] - arr[l_ptr] < minim:
+            val = arr[r_ptr] - arr[l_ptr]
+            if val <= 2:
+                return [arr[l_ptr], arr[r_ptr]]
+            elif val < minim:
                 self.bools = [arr[l_ptr], arr[r_ptr]]
                 minim = arr[r_ptr] - arr[l_ptr]
             l_ptr += 1
