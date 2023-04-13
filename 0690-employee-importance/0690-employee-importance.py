@@ -12,6 +12,7 @@ class Solution:
         self.importante = 0
         self.visited = set()
     def getImportance(self, employees: List['Employee'], id: int) -> int:
+        self.visited = set(employees)
         for employee in employees:
             if employee.id == id:
                 self.importante = employee.importance
@@ -19,13 +20,13 @@ class Solution:
         self.dfs(employee,employees)
         return self.importante
     def dfs(self, node, employees):
-        self.visited.add(node)
+        self.visited.remove(node)
         if not node.subordinates:
             return
         
         for childId in node.subordinates:
-            for employee in employees:
-                if employee not in self.visited and childId == employee.id:
+            for employee in self.visited:
+                if childId == employee.id:
                     break
             self.importante += employee.importance
             self.dfs(employee,employees)
