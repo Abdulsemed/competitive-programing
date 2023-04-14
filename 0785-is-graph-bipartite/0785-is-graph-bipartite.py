@@ -19,8 +19,6 @@ class Solution:
         arr[index] = color +1 if color == 1 else 1
         for val in graph[index]:
             if val not in self.visited:
-                if arr[val] != color and arr[val] != 0:
-                    return False
                 arr[val] = color
                 bools = self.iterative(val, color+1 if color == 1 else 1, graph,arr)
                 if not bools:
