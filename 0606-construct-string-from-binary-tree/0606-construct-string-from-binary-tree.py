@@ -12,14 +12,17 @@ class Solution:
         return []
     def dfs(self,root,path):
         if not root:
+            path.append("()")
             return path
         path.append("(")
         path.append(str(root.val))
-        if not root.left and  root.right:
-            path.append("()")
         path = self.dfs(root.left,path)
         path = self.dfs(root.right, path)
-        
+        if root.left and not root.right:
+            path.pop()
+        elif not root.left and not root.right:
+            path.pop()
+            path.pop()
             
         path.append(")")
         return path
