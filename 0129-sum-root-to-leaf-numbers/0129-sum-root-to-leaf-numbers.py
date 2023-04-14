@@ -8,15 +8,15 @@ class Solution:
     def __init__(self):
         self.sumRoot = 0
     def sumNumbers(self, root: Optional[TreeNode]) -> int:
-        self.traverse(root,[])
+        self.traverse(root,"")
         return self.sumRoot
     def traverse(self,root,path):
         if not root:
             return 
-        path.append(str(root.val))
-        self.traverse(root.left,path)
-        self.traverse(root.right,path)
         if not root.left and not root.right:
-            self.sumRoot += int(''.join(path))
-        if path: path.pop()
+            path += str(root.val)
+            self.sumRoot += int(path)
+            return
+        self.traverse(root.left,path+str(root.val))
+        self.traverse(root.right,path+str(root.val))
         
