@@ -8,9 +8,9 @@ class Solution:
         for index in range(len(grid1)):
             for val in range(len(grid1[0])):
                 self.bools = True
-                if (index,val) not in self.visited and grid2[index][val]:
+                if (index,val) not in self.visited and grid2[index][val] and grid1[index][val]:
                     self.dfs(index,val,grid1,grid2)
-                    if grid1[index][val] and self.bools:
+                    if self.bools:
                         self.count += 1
                 
         return self.count
