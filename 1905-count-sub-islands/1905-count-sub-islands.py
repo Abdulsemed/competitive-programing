@@ -11,7 +11,6 @@ class Solution:
                 if (index,val) not in self.visited and grid2[index][val]:
                     self.dfs(index,val,grid1,grid2)
                     if grid1[index][val] and self.bools:
-                        print(index, val)
                         self.count += 1
                 
         return self.count
