@@ -6,7 +6,6 @@ class Solution:
         visited = set()
         directions  =[(0,1),(1,0),(0,-1),(-1,0)]
         count = 0
-        ones = 0
         rowSize = len(grid)
         colSize = len(grid[0])
         for index in range(rowSize):
@@ -14,8 +13,6 @@ class Solution:
                 if grid[index][val] == 2:
                     queue.append((index,val))
                     visited.add((index,val))
-                elif grid[index][val] == 1:
-                    ones += 1
         while queue:
             length = len(queue)
             flag=  False
@@ -26,13 +23,17 @@ class Solution:
                     new_col = col + col_c
                     if self.inbound(new_row,new_col,grid) and (new_row,new_col) not in visited:
                         if grid[new_row][new_col] == 1:
-                            ones -= 1
                             grid[new_row][new_col] = 2
                             flag = True
                         visited.add((new_row,new_col))
                         if grid[new_row][new_col] == 2:
                             queue.append((new_row,new_col))
             if flag:count += 1
-        if ones > 0:
-            count  = -1
+        for index in range(rowSize):
+            for val in range(colSize):
+                if grid[index][val] == 1:
+                    count = - 1
+                    break
+            if count == -1:
+                break
         return count
