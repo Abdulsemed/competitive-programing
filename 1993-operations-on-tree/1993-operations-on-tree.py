@@ -32,24 +32,23 @@ class LockingTree:
             
             if not self.bools:
                 return False
-            lists = self.locks
             self.bools = False
-            self.dfs(num)
+            queue = deque([num])
+            while queue:
+                curr = queue.popleft()
+                if self.locks[curr][1] != -1:
+                    self.bools = True
+                    break
+                for child in self.graph[curr]:
+                    queue.append(child)
             if self.bools:
+                self.dfs(num)
                 self.lock(num,user)
                 return True
-            self.locks = lists
             return False
         return False
     def dfs(self,num):
-        if self.locks[num][1] != -1: 
-            self.bools = True
         self.locks[num][1] = -1
         if num in self.graph:
             for child in self.graph[num]:
                 self.dfs(child)
-# Your LockingTree object will be instantiated and called as such:
-# obj = LockingTree(parent)
-# param_1 = obj.lock(num,user)
-# param_2 = obj.unlock(num,user)
-# param_3 = obj.upgrade(num,user)
