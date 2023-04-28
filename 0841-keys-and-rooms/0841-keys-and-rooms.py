@@ -10,6 +10,6 @@ class Solution:
                 if element not in children:
                     children.add(element)
                     queue.append(element)
-        if children == set([index for index in range(len(rooms))]):
+        if len(children) == len(rooms):
             return True
         return False
