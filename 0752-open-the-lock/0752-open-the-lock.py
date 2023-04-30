@@ -23,6 +23,8 @@ class Solution:
                         else:
                             holder = str(num)   
                         string = curr[:index]+holder+curr[index+1:]
+                        if string == target:
+                            return level+1
                         if string not in deadends and string not in visited:
                             visited.add(string)
                             queue.append(string)
