@@ -1,10 +1,10 @@
 class Solution:
     def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> List[int]:
         graph = defaultdict(list)
-        inDegree = defaultdict(int)
+        inDegree = [0]*(numCourses)
         for src, end in prerequisites:
             graph[end].append(src)
-            inDegree[src] = 1 + inDegree.get(src,0)
+            inDegree[src] += 1 
         ans = []
         queue = deque()
         for key in range(numCourses):
