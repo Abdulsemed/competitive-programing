@@ -32,7 +32,8 @@ class Solution:
         for index in range(size):
             self.count = -1
             self.val = -1
-            self.cycle(index,graph,colors)
+            if index not in self.visited:
+                self.cycle(index,graph,colors)
             self.visited.add(index)
             count = max(self.count,count)
         return count
