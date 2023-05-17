@@ -20,10 +20,9 @@ class Solution:
             self.size[rep_2] += self.size[rep_1]
 
     def findRedundantConnection(self, edges: List[List[int]]) -> List[int]:
-        ans = []
         self.dicts = {index:index for index in range(len(edges))}
         self.size = [1]*(len(edges))
         for src,end in edges:
             if self.union(src-1,end-1):
-                ans.append([src,end])
-        return ans[-1]
+                ans = [src,end]
+        return ans
