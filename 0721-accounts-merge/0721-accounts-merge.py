@@ -1,37 +1,39 @@
 class Solution:
     def __init__(self):
-        self.reps = defaultdict(set)
         self.dicts = {}
+        self.size = []
+        self.reps = {}
     def find(self,node):
         if node != self.dicts[node]:
             self.dicts[node] = self.find(self.dicts[node])
         return self.dicts[node]
     def united(self,rep1,rep2):
-        for element in self.reps[rep2]:
-            if element in self.reps[rep1]:
-                self.reps[rep1] = self.reps[rep1].union(self.reps[rep2])
-                self.dicts[rep2] = rep1
-                break
+        self.dicts[rep2] = rep1
+        self.size[rep1] += self.size[rep2] 
     def union(self,node1,node2):
         rep1 = self.find(node1)
         rep2 = self.find(node2)
         if rep1 == rep2:
             return 
-        if len(self.reps[rep1]) > len(self.reps[rep2]):
+        if self.size[rep1] > self.size[rep2]:
             self.united(rep1,rep2)
         else:
             self.united(rep2,rep1)
     def accountsMerge(self, accounts: List[List[str]]) -> List[List[str]]:
+        self.size = [1] *(len(accounts))
         for index in range(len(accounts)):
             self.dicts[index] = index
-            self.reps[index] = set(accounts[index][1:])
         for index in range(len(accounts)):
-            for val in range(index+1,len(accounts)):
-                if accounts[index][0] == accounts[val][0]:
-                    self.union(index,val)
-        ans = []
-        for key in self.dicts:
-            if key == self.dicts[key]:
-                ans.append([accounts[key][0]])
-                ans[-1].extend(sorted(list(self.reps[key])))
-        return ans
+            for val in accounts[index][1:]:
+                if val in self.reps:
+                    self.union(index,self.reps[val])
+                else:
+                    self.reps[val] = index
+        ans = defaultdict(list)
+        for key in self.reps:
+            rep = self.find(self.reps[key])
+            ans[rep].append(key)
+        self.dicts = []
+        for key in ans:
+            self.dicts.append([accounts[key][0]]+ sorted(ans[key]))
+        return self.dicts
