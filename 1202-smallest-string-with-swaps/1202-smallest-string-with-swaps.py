@@ -27,7 +27,7 @@ class Solution:
         ans = []
         for key in self.reps:
             if key == self.dicts[key]:
-                self.reps[key] = sorted(self.reps[key], reverse = True)
+                self.reps[key].sort(reverse=True)
         for i in range(len(s)):
             rep = self.find(i)
             ans.append(self.reps[rep].pop())
