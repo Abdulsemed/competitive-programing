@@ -1,7 +1,7 @@
 class Solution:
     def checkIfPrerequisite(self, numCourses: int, prerequisites: List[List[int]], queries: List[List[int]]) -> List[bool]:
         dicts = defaultdict(set)
-        inDegree = defaultdict(int)
+        inDegree = [0]*(numCourses)
         for src,end in prerequisites:
             dicts[src].add(end)
             inDegree[end] += 1
