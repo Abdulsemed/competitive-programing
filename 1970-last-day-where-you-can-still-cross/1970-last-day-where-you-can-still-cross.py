@@ -43,6 +43,10 @@ class Solution:
                 lefts.add(self.find(element))
             for element in right:
                 rights.add(self.find(element))
-            for val in lefts:
-                if val in rights: return index
+            if len(lefts) < len(rights):
+                for val in lefts:
+                    if val in rights: return index
+            else:
+                for val in rights:
+                    if val in lefts: return index
         return len(cells)       
