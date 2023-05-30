@@ -13,5 +13,4 @@ class Solution:
         return self.dicts[(index,sums)]
         
     def findTargetSumWays(self, nums: List[int], target: int) -> int:
-        self.solve(0,0,target,nums)
-        return self.dicts[(0,0)]
+        return self.solve(0,0,target,nums)
