@@ -13,5 +13,5 @@ class Solution:
         size = len(nums)
         if size < 3:
             return max(nums)
-        return max(self.solve(size-3, nums)+nums[size-1],self.solve(size-2, nums) )
+        return self.solve(size-1,nums)
         
