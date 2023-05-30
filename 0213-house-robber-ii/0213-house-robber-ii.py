@@ -20,8 +20,7 @@ class Solution:
         return self.dicts[(n,par)]
     def rob(self, nums: List[int]) -> int:
         size = len(nums)
-        if size < 3:
+        if size <= 3:
             return max(nums)
         val = self.solve(size-1,nums,size-1)
-        return max(val,nums[0])
-        
+        return val
