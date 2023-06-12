@@ -2,7 +2,6 @@ class Solution:
     def judgeSquareSum(self, c: int) -> bool:
         left = 0
         right = int(sqrt(c))
-        print(right)
         while left <= right:
             val = left**2 + right**2
             if val == c:
