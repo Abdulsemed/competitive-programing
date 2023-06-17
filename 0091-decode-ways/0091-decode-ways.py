@@ -19,9 +19,4 @@ class Solution:
         return self.dicts[index]
     def numDecodings(self, s: str) -> int:
         return self.solve(0,1, s)
-        print(self.dicts)
-        return 0
-#     2,2,6,10,5,3,20,9
-#     22,6,10,5,3,20,9
-#     2,26,10,5,3,20,9
 
