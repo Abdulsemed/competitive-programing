@@ -1,27 +1,26 @@
 class Solution:
-    def __init__(self):
-        self.direction = [(1,-1),(1,0),(1,1)]
-        self.memo = {}
     def inbound(self, row,col,n):
         return 0 <= row < n and 0<= col < n
-    
     def minFallingPathSum(self, matrix: List[List[int]]) -> int:
+        direction = [(1,-1),(1,0),(1,1)]
         minim = float("inf")
-        for index in range(len(matrix)):
-            minim = min(minim,self.dfs(0,index,matrix))
-            
+        dicts = {}
+        for index in range(len(matrix)-1,-1,-1):
+            for val in range(len(matrix)-1,-1,-1):
+                if index == len(matrix)-1:
+                    dicts[(index,val)] = matrix[index][val]
+                else:
+                    curr = float("inf")
+                    for _r,_c in direction:
+                        new_r = index + _r
+                        new_c = val + _c
+                        if self.inbound(new_r,new_c,len(matrix)):
+                            curr = min(curr, dicts[(new_r,new_c)])
+                    dicts[(index,val)] = curr + matrix[index][val]
+                if index == 0:
+                    minim = min(minim, dicts[(index,val)])
+
         return minim
-    def dfs(self, row,col,matrix):
-        if row == len(matrix)-1:
-            return matrix[row][col]
-        if (row,col) in self.memo:
-            return self.memo[(row,col)]
-        curr = float("inf")
-        for _r, _c in self.direction:
-            new_r = row + _r
-            new_c = col + _c
-            if self.inbound(new_r,new_c,len(matrix)):
-                curr = min(curr,self.dfs(new_r,new_c,matrix))
-        self.memo[(row,col)] = curr + matrix[row][col]
-        return self.memo[(row,col)]
                 
+                
+            
