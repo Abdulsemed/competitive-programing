@@ -1,25 +1,37 @@
 class Solution:
     def __init__(self):
-        self.graph = defaultdict(list)
-        self.visited = set()
+        self.dicts = {}
+        self.size = []
+        
+    def find(self,node):
+        if node != self.dicts[node]:
+            self.dicts[node] = self.find(self.dicts[node])
+        return self.dicts[node]
+    def union(self,node1,node2):
+        rep1 = self.find(node1)
+        rep2 = self.find(node2)
+        
+        if rep1 == rep2:
+            return
+        elif self.size[rep1] > self.size[rep2]:
+            self.size[rep1] += self.size[rep2]
+            self.dicts[rep2] = rep1
+        else:
+            self.size[rep2] += self.size[rep1]
+            self.dicts[rep1] = rep2
     def findCircleNum(self, isConnected: List[List[int]]) -> int:
-        size = len(isConnected)
-        for index in range(size):
-            for val in range(size):
-                if isConnected[index][val] == 1:
-                    self.graph[index].append(val)
-        count = 0
-        for key in self.graph:
-            if key not in self.visited:
-                self.dfs(key)
-                count += 1
+        length = len(isConnected)
+        self.size =[1]*(length)
+        for index in range(length):
+            self.dicts[index] = index
+        for index in range(length):
+            for idx in range(len(isConnected[index])):
+                if isConnected[index][idx] != 0:
+                    self.union(index,idx)
+        provinces = 0
+        for key in self.dicts:
+            if key == self.dicts[key]:
+                provinces += 1
                 
-        return count
-    def dfs(self, node):
-        self.visited.add(node)
-        
-        if node in self.graph:
-            for child in self.graph[node]:
-                if child not in self.visited:
-                    self.dfs(child)
-        
+        return provinces
+            
