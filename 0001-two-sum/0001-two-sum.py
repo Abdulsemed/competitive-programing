@@ -6,4 +6,4 @@ class Solution:
                 return [hash_map[target-elt], index]
             hash_map[elt] = index
         
-        
+
