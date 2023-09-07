@@ -12,28 +12,21 @@ class Solution:
             size += 1
         ans = []
         temp = head
-        if size < k:
-            while k:
-                if temp:
-                    val = temp
-                    temp = temp.next
-                    val.next = None
-                    ans.append(val)
-                else:
-                    ans.append(None)
-                k -= 1
-        else:
-            count = size // k
-            remainder = size % k
-            while k:
-                ans.append(temp)
-                for _ in range(count-1):
-                    temp = temp.next
-                if remainder:
-                    temp = temp.next
-                    remainder -= 1
-                k -= 1
+        count = size // k
+        remainder = size % k
+        while k:
+            ans.append(temp)
+            for _ in range(count):
+                val = temp
+                temp = temp.next
+            if remainder:
                 val = temp.next
                 temp.next = None
                 temp = val
+                remainder -= 1
+            elif temp:
+                val.next = None
+                
+            k -= 1
+            
         return ans
