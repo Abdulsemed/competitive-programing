@@ -27,13 +27,18 @@ class WordFilter:
 
     def __init__(self, words: List[str]):
         self.obj = Trie()
+        self.dicts = {}
         for index in range(len(words)):
             for val in range(len(words[index])):
                 combined = words[index][val:] + "{" + words[index]
                 self.obj.insert(index,combined)
 
     def f(self, pref: str, suff: str) -> int:
-        return self.obj.search(self.obj,suff+"{" + pref)
+        val = suff+"{" + pref
+        if val not in self.dicts:
+            self.dicts[val] = self.obj.search(self.obj,suff+"{" + pref)
+            
+        return self.dicts[val]
 
 # Your WordFilter object will be instantiated and called as such:
 # obj = WordFilter(words)
