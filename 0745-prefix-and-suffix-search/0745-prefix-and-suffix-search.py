@@ -11,7 +11,6 @@ class Trie:
                 curr.children[asci] = Trie()
             curr = curr.children[asci]
             curr.index = index
-        curr.index = index
         curr.is_end = True
     
     def search(self,curr,word):
