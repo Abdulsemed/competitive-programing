@@ -12,11 +12,6 @@ class Solution:
                     stack.pop()
             else:
                 stack.append([letter, 1])
-        while stack:
-            if stack[-1][1] == k:
-                    stack.pop()
-            else:
-                break
                 
         ans = []
         for key,val in stack:
