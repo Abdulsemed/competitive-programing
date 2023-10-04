@@ -1,30 +1,21 @@
 class Solution:
     def checkIfPrerequisite(self, numCourses: int, prerequisites: List[List[int]], queries: List[List[int]]) -> List[bool]:
-        dicts = defaultdict(set)
-        inDegree = [0]*(numCourses)
+        dist = [[float("inf") if index != val else 0 for index in range(numCourses) ]
+                for val in range(numCourses)]
+        
         for src,end in prerequisites:
-            dicts[src].add(end)
-            inDegree[end] += 1
-        queue = deque()
-        for index in range(numCourses):
-            if inDegree[index] == 0:
-                queue.append(index)
-        holder = dicts.copy()       
-        while queue:
-            curr = queue.popleft()
-            for child in dicts[curr]:
-                inDegree[child] -= 1
-                if inDegree[child] == 0:
-                    queue.append(child)
-            for key in dicts:
-                if curr in holder[key]:
-                    holder[key] = holder[key].union(holder[curr])
-        ans = []
+            dist[src][end] = 1
+        
+        for k in range(numCourses):
+            for i in range(numCourses):
+                for j in range(numCourses):
+                    if dist[i][k] + dist[k][j] < dist[i][j]:
+                        dist[i][j] = dist[i][k] + dist[k][j]
+        answer = []
         for src,end in queries:
-            if end in holder[src]:
-                ans.append(True)
+            if dist[src][end] == float("inf"):
+                answer.append(False)
             else:
-                ans.append(False)
-        return ans
-                    
+                answer.append(True)
                 
+        return answer
