@@ -1,20 +1,22 @@
 class Solution:
+    def __init__(self):
+        self.minim = float("inf")
+        self.dicts = {}
     def lastStoneWeightII(self, stones: List[int]) -> int:
         arr =[0]
-        sums = sum(stones)
-        minim = float("inf")
-        sets = {0}
-        for stone in stones:
-            size = len(arr)
-            for index in range(size):
-                val = arr[index] + stone
-                if val not in sets:
-                    arr.append(val)
-                    sets.add(val)
-                    
-        for num in arr:
-            val = sums - 2*(num)
+        self.sums = sum(stones)
+        
+        self.dfs(0,0,stones)
+        return self.minim
+    def dfs(self,index, sums, stones):
+        if index >= len(stones):
+            val = self.sums - 2*(sums)
             if val > -1:
-                minim = min(minim, val)
-        return minim
+                self.minim = min(self.minim, val)
+            return sums
+        if (sums, index) in self.dicts:
+            return self.dicts[(sums, index)]
+        self.dicts[(sums,index)] = 1
+        self.dfs(index+1, sums + stones[index], stones) 
+        self.dfs(index+1, sums,stones)
     
