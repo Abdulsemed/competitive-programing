@@ -9,8 +9,9 @@ class Solution:
     def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
         list1 = self.traverse(root,[],p)
         list2 = self.traverse(root,[],q)
+        sets = set(list2)
         for element in list1:
-            if element in list2:
+            if element in sets:
                 val = element
         return val
     def traverse(self,root,lists,target):
