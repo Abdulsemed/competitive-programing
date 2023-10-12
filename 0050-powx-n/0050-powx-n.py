@@ -1,12 +1,14 @@
 class Solution:
     def myPow(self, x: float, n: int) -> float:
-        if n == 0:
-            return 1
+        power = x
+        result = 1
+        k = abs(n)
+        while k:
+            if k & 1:
+                result = result * power
+            power = power * power
+            k >>= 1
         if n < 0:
-            return 1 /self.myPow(x,-n)
-        if n % 2:
-            return x * self.myPow(x,n-1)
-        
-        return self.myPow(x*x,n//2)
-    
-#     val = self.myPow(x*x,n//2)*self.myPow(x,n/2)
+            result = 1 / result
+        return result
+            
