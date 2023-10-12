@@ -2,14 +2,14 @@ class Solution:
     def multiply(self, a, b, m):
         return ((a % m) * (b % m)) % m
 
-    def myPow(self, x: float, n: int) -> float:
+    def myPow(self, x: float, n: int, m) -> float:
         power = x
         result = 1
         k = abs(n)
         while k:
             if k & 1:
-                result = result * power
-            power = power * power
+                result = self.multiply(result, power,m)
+            power = self.multiply(power,power,m)
             k >>= 1
         if n < 0:
             result = 1 / result
@@ -23,10 +23,10 @@ class Solution:
         
         if n % 2:
             n = n//2
-            result = self.multiply(pow(odd,n,mod), pow(even,n+1,mod), mod) 
+            result = self.multiply(self.myPow(odd,n,mod), self.myPow(even,n+1,mod), mod) 
         else:
             n = n//2
-            result = self.multiply(pow(odd,n,mod), pow(even,n,mod), mod) 
+            result = self.multiply(self.myPow(odd,n,mod), self.myPow(even,n,mod), mod) 
             
         return result % mod
         
