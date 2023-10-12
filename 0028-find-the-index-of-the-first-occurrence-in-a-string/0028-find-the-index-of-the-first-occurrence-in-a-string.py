@@ -1,25 +1,34 @@
 class Solution:
     def strStr(self, haystack: str, needle: str) -> int:
-        left = 0
-        right = len(needle) -1
-        if right >= len(haystack):
+        size1 = len(needle)
+        size2 = len(haystack)
+        if size1 > size2:
             return -1
-        curr = 0
-        search = 0
-        
-        for index in range(len(needle)-1,-1,-1):
-            curr += (26 **(len(needle) -index -1)) *(ord(haystack[index])-96)
-            search += (26 **(len(needle) -index -1)) *(ord(needle[index])-96)
-            curr = curr % (1000000007)
-            search = search % (1000000007) 
-        while right <= len(haystack):
-            if curr == search:
-                return left
+        lps = [0]*(size1)
+        i = 1
+        prev = 0
+        while i < size1:
+            if needle[prev] == needle[i]:
+                lps[i] = prev + 1
+                prev += 1
+                i += 1
             else:
-                if right + 1 >= len(haystack):
-                    break
-                curr = (curr - ((26**(len(needle)-1)) *(ord(haystack[left])-96))) * 26 + ord(haystack[right+1]) - 96
-                curr = curr % (1000000007)
-                left += 1
-                right += 1
+                if prev == 0:
+                    i += 1
+                else:
+                    prev = lps[prev-1]
+        index =0 
+        i = 0
+        while index < size2:
+            if haystack[index] == needle[i]:
+                index += 1
+                i += 1
+                if i == size1:
+                    return index-(size1)
+            else:
+                if i == 0:
+                    index += 1
+                else:
+                    i = lps[i-1]
+            
         return -1
