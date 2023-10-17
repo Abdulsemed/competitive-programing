@@ -22,5 +22,7 @@ class Solution:
         for index in range(1,size):
             if num == dp[index][0]:
                 count += dp[index][1]
+            else:
+                break
                 
         return count
