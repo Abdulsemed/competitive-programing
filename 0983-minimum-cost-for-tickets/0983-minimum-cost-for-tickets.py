@@ -1,35 +1,17 @@
 class Solution:
     def mincostTickets(self, days: List[int], costs: List[int]) -> int:
-        size = len(days)
-        dp = [float("inf")]*(size)
-        dp[-1] = min(costs)
-        for index in range(size-2,-1,-1):
-            for val in range(3):
-                left = index
-                right = size-1
-                if val == 0:
-                    target = days[left] + 0
-                elif val == 1:
-                    target = days[left] + 6
-                else:
-                    target = days[left] + 29  
-
-                while left <= right:
-                    mid = left + (right-left)//2
-                    if days[mid] > target:
-                        right = mid - 1
-                    elif days[mid] < target:
-                        left = mid + 1
-                    else:
-                        left = mid
-                        break
-                leftCount = 0
-                if left < size and days[left] <= target:
-                    left += 1
-                    
-                if left < size:
-                    leftCount = dp[left]
-                dp[index] = min(dp[index], costs[val] + leftCount)
+        maxDay = days[-1]+1
+        index = 0
+        dp = [0]*(maxDay)
+        for day in range(1,maxDay):
+            if day < days[index]:
+                dp[day] = dp[day-1]
+            else:
+                index += 1
                 
-        return dp[0]
-                    
+                dp[day] = min(
+                    dp[day-1] + costs[0],
+                    dp[max(0,day-7)] + costs[1],
+                    dp[max(0,day-30)] + costs[2]
+                )
+        return dp[-1]
