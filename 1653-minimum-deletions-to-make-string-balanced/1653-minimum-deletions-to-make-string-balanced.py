@@ -7,4 +7,4 @@ class Solution:
             a_sum += (ch == 'b')
             b_sum += (ch == 'a')
             ans = min(ans, a_sum + (b_total - b_sum))
-        return min(ans, a_sum)
+        return ans
