@@ -10,18 +10,19 @@ class Solution:
                 graph[index].append(rightChild[index])
                 indegree[rightChild[index]] += 1
             
-        visited = set()
+        
         stack =[]
         for child in range(n):
-            if not stack and indegree[child] == 0:
+            if indegree[child] == 0:
                 stack.append(child)
-            if indegree[child] > 1:
-                return False
+                break
+        visited = set() if not stack else {stack[0]}
         while stack:
             curr = stack.pop()
-            visited.add(curr)
             for child in graph[curr]:
+                if child in visited:
+                    return False
                 stack.append(child)
-        if len(visited) == n:
-            return True
-        return False
+                visited.add(child)
+                
+        return len(visited) == n
