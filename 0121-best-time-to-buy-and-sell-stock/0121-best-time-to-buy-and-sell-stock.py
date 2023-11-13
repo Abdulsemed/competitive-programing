@@ -2,13 +2,13 @@ class Solution:
     def maxProfit(self, prices: List[int]) -> int:
         maxim = 0
         size = len(prices)
-        prices[size-1] = (prices[size-1],prices[size-1])
+        newPrices = [prices[-1]]
         for index in range(size-2,-1,-1):
-            if prices[index] < prices[index+1][1]:
-                prices[index] = (prices[index],prices[index+1][1])
+            if prices[index] < newPrices[-1]:
+                newPrices.append(newPrices[-1])
             else:
-                prices[index] = (prices[index],prices[index])
+                newPrices.append(prices[index])
         for index in range(size-1):
-            maxim = max(prices[index+1][1] - prices[index][0], maxim)
+            maxim = max(newPrices[size-index-1] - prices[index], maxim)
             
         return maxim
