@@ -10,24 +10,24 @@ class Solution:
             if src in graph and src == end:
                 answer.append(1)
             elif src in graph and end in graph:
-                dist = {node : float("inf") for node in graph}
-                queue = [(1,src)]
-                visited = set()
+                queue = deque([[1,src]])
+                visited = {src}
+                flag = False
                 while queue:
-                    curr_val, node = heapq.heappop(queue)
+                    curr_val, node = queue.popleft()   
                     
-                    if node in visited:
-                        continue
-                        
-                    visited.add(node)
                     for child, val in graph[node]:
-                        if curr_val * val < dist[child]:
-                            dist[child] = curr_val * val
-                            heapq.heappush(queue, [dist[child], child])
-                            
-                if dist[end] != float("inf"):
-                    answer.append(dist[end])
-                else:
+                        if child == end:
+                            answer.append(curr_val*val)
+                            flag = True
+                            break
+                        if child not in visited:   
+                            queue.append([curr_val * val,child])
+                            visited.add(child)
+                    if flag:
+                        break
+                   
+                if not flag:
                     answer.append(-1)               
             else:
                 answer.append(-1)
