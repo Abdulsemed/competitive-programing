@@ -6,9 +6,10 @@ class Solution:
         for element in nums:
             goodPairs[element] = 1 + goodPairs.get(element, 0)
             
-        for value in goodPairs.values():
-            if value > 1:
-                value = ((value-1)*value)/2
+        for key in goodPairs:
+            if goodPairs[key] > 1:
+                value = goodPairs[key]
+                value = ((value-1)*value)//2
                 count += value
         
-        return int(count)
+        return count
