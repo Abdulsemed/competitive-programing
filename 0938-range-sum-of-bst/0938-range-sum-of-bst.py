@@ -5,17 +5,18 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    def __init__(self):
-        self.sum = 0
     def rangeSumBST(self, root: Optional[TreeNode], low: int, high: int) -> int:
-        self.dfs(root,low,high)
-        return self.sum
-    def dfs(self,root,low,high):
-        if not root:
-            return
-        if low <= root.val <= high:
-            self.sum += root.val
+        sums = 0
+        queue = deque([root])
+        
+        while queue:
+            curr = queue.popleft()
+            if low <= curr.val <= high:
+                sums += curr.val
+            if curr.left:
+                queue.append(curr.left)
+            if curr.right:
+                queue.append(curr.right)
             
-        self.dfs(root.left,low,high)
-        self.dfs(root.right,low,high)
+        return sums
         
