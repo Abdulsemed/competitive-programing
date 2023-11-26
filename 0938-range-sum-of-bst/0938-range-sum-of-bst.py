@@ -13,9 +13,9 @@ class Solution:
             curr = queue.popleft()
             if low <= curr.val <= high:
                 sums += curr.val
-            if curr.left:
+            if curr.left and curr.val >= low:
                 queue.append(curr.left)
-            if curr.right:
+            if curr.right and curr.val <= high:
                 queue.append(curr.right)
             
         return sums
