@@ -1,11 +1,23 @@
 class Solution:
     def isMonotonic(self, nums: List[int]) -> bool:
         size = len(nums)
-        stack = sorted(nums)
-        if stack == nums:
+        stack = []
+        if size < 2:
             return True
-        stack = sorted(nums, reverse = True)
-        if stack == nums:
+        flag = None
+        for index in range(1,size):
+            stack.append(nums[index] - nums[index-1])
+            if not flag:
+                if stack[-1] < 0:
+                    flag = False
+                elif stack[-1] > 0:
+                    flag = True
+        if not flag:
             return True
-        return False
+        for element in stack:
+            if flag and element < 0:
+                return False
+            elif not flag and element > 0:
+                return False
+        return True
         
