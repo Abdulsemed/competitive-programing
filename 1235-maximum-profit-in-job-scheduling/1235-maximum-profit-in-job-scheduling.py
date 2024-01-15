@@ -3,26 +3,17 @@ class Solution:
         for index in range(len(endTime)):
             endTime[index] = [startTime[index],endTime[index],profit[index]]
         endTime.sort(key = lambda x:(x[0],x[1]))
-        dicts = [-1] * len(startTime)
-        def dfs(index):
-            if index >= len(startTime):
-                return 0
-            if dicts[index] != -1:
-                return dicts[index]
-            maxim = 0
-            value = endTime[index][1]
-            profit = endTime[index][2]
+        dp = [0] * (len(startTime)+1)
+        for index in range(len(startTime)-1,-1,-1):
             left = index
             right = len(startTime)-1
+            value = endTime[index][1]
             while left<= right:
                 mid = left + (right-left)//2
                 if endTime[mid][0] >= value:
                     right = mid -1
                 else:
                     left = mid + 1
-
-            maxim = max(dfs(index+1), dfs(left)+ profit)
-            dicts[index] = maxim        
-            return maxim
-        
-        return dfs(0)
+            dp[index] =  max(endTime[index][2] + dp[left], dp[index+1])
+            
+        return dp[0]
