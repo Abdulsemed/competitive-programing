@@ -3,11 +3,11 @@ class Solution:
         for index in range(len(endTime)):
             endTime[index] = [startTime[index],endTime[index],profit[index]]
         endTime.sort(key = lambda x:(x[0],x[1]))
-        dicts = {}
+        dicts = [-1] * len(startTime)
         def dfs(index):
             if index >= len(startTime):
                 return 0
-            if index in dicts:
+            if dicts[index] != -1:
                 return dicts[index]
             maxim = 0
             value = endTime[index][1]
