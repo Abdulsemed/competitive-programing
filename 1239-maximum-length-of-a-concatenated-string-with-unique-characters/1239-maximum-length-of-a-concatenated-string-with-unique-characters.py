@@ -10,11 +10,11 @@ class Solution:
             bools = True
             before = mask
             for val in arr[index]:
-                pos = ord(val)-97
-                if (1<<pos) & mask != 0:
+                pos = 1 << (ord(val)-97)
+                if pos & mask != 0:
                     bools = False
                     continue
-                mask += (2**pos)
+                mask += pos
             # print(flag,index,mask,bools)
             
             dicts[(index,before)] = max(dfs(index+1,mask)+ (len(arr[index]) if bools else 0),
