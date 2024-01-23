@@ -1,33 +1,24 @@
 class Solution:
-    def __init__(self):
-        self.maxLen = 0
-        self.size = 0
     def maxLength(self, arr: List[str]) -> int:
-        self.size = len(arr)
-        self.concat(0,arr,[])
-        return self.maxLen
-    def concat(self,index, arr, path):
-        self.maxLen = max(self.maxLen, len(Counter(''.join(path))))
-        if index >= self.size:
-            return 
-        for val in range(index, self.size):
-            dicts = Counter(arr[val]) 
-            maxim = max(dicts.values()) == 1
-            if not path:
-                if maxim:
-                    path.append(arr[val])
-                    self.concat(val+1,arr,path[:])
-                    path.pop()
-                else:
+        dicts = {}
+        
+        def dfs(index,mask):
+            if index >= len(arr):
+                return 0
+            if (index,mask) in dicts:
+                return dicts[(index,mask)]
+            bools = True
+            before = mask
+            for val in arr[index]:
+                pos = ord(val)-97
+                if (1<<pos) & mask != 0:
+                    bools = False
                     continue
-            elif maxim:
-                flag = True
-                count = Counter(''.join(path))
-                for element in arr[val]:
-                    if element in count:
-                        flag = False
-                        break
-                if flag:
-                    path.append(arr[val])
-                    self.concat(val+1,arr,path[:])
-                    path.pop()
+                mask += (2**pos)
+            # print(flag,index,mask,bools)
+            
+            dicts[(index,before)] = max(dfs(index+1,mask)+ (len(arr[index]) if bools else 0),
+                                        dfs(index+1,before))
+            return dicts[(index,before)]
+        
+        return dfs(0,0)
