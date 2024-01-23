@@ -13,7 +13,7 @@ class Solution:
                 pos = 1 << (ord(val)-97)
                 if pos & mask != 0:
                     bools = False
-                    continue
+                    break
                 mask += pos
             # print(flag,index,mask,bools)
             
