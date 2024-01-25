@@ -1,14 +1,14 @@
 class Solution:
     def longestCommonSubsequence(self, text1: str, text2: str) -> int:
-        dicts = {}
-        def dfs(idx,val):
-            if idx >= len(text1) or val >= len(text2):
-                return 0
+        size1, size2 = len(text1)+1, len(text2)+1
+        dp =[[0 for _ in range(size1)] for _ in range(size2)]
+        for index in range(1,size2):
+            for idx in range(1,size1):
+                val = 0
+                if index < size2 and idx < size1 and text2[index-1] == text1[idx-1]:
+                    dp[index][idx] = max( dp[index][idx], dp[index-1][idx-1] + 1)
+                else:
+                    dp[index][idx] = max(dp[index][idx], dp[index][idx-1],dp[index-1][idx])
             
-            if (idx, val) in dicts:
-                return dicts[(idx,val)]
-            
-            dicts[(idx,val)] = max(dfs(idx+1,val), (dfs(idx+1,val+1) + (text1[idx] == text2[val]) ),dfs(idx,val+1))
-            return dicts[(idx,val)]
-        
-        return dfs(0,0)
+        # print(dp)
+        return dp[size2-1][size1-1]
