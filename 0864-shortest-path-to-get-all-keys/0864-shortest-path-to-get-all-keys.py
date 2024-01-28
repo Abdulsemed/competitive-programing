@@ -18,7 +18,6 @@ class Solution:
         ans = float("inf")
         while queue:
             for _ in range(len(queue)):
-                # print(queue)
                 row,col,mask,moves = queue.popleft()
                 
                 if mask == keysValue:
@@ -29,16 +28,14 @@ class Solution:
                     if inbound(new_r,new_c) and grid[new_r][new_c] != "#":
                         curr = 0
                         if grid[new_r][new_c].isupper():
-                            pos = (ord(grid[new_r][new_c].lower()) -97)
-                            if (1 << pos) & mask == 0:
+                            pos = 1 << (ord(grid[new_r][new_c].lower()) -97)
+                            if pos & mask == 0:
                                 continue
                         
                         elif low(new_r,new_c) :
-                            curr = (ord(grid[new_r][new_c]) - 97)
-                            if 1 << curr & mask != 0:
+                            curr = 1 << (ord(grid[new_r][new_c]) - 97)
+                            if curr & mask != 0:
                                 curr = 0
-                            else:
-                                curr = 2**curr
                         if (new_r,new_c,mask+curr) not in visited:
                             queue.append([new_r,new_c,mask+curr,moves+1])
                             visited.add((new_r,new_c,mask+curr))
