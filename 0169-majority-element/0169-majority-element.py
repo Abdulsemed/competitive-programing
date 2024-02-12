@@ -1,8 +1,12 @@
-class Solution:
-    def majorityElement(self, nums: List[int]) -> int:
-        dicts = Counter(nums)
-        size = len(nums)/2
-        for key in dicts:
-            if dicts[key] > size:
+class Solution(object):
+    def majorityElement(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        freq = Counter(nums)
+        for key,value in freq.items():
+            if value > (len(nums)//2):
                 return key
-                
+            
+        
