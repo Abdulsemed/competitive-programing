@@ -1,25 +1,23 @@
 class Solution:
     def numSquares(self, n: int) -> int:
-        queue = deque([(0,0)])
-        visited = set()
-        arr = [1]
-        curr = 2
-        while arr[-1] < n:
-            arr.append(curr*curr)
-            curr += 1
-        if arr[-1] > n:
-            arr.pop()
-        arr = arr[::-1]
-        while queue:
-            length = len(queue)
-            for _ in range(length):
-                val,lev = queue.popleft()
-                if (val,lev) in visited:
-                    continue
-                    
-                for ele in arr:
-                    currVal = val + ele
-                    if (currVal,lev+1) not in visited and currVal < n:
-                        queue.append((currVal,lev+1))
-                    if currVal == n:
-                        return lev+1
+        
+        def dfs(curr):
+            
+            if curr == 0:
+                return 0
+            if curr in dicts:
+                return dicts[curr]
+            ele = 1
+            sqr = 1
+            minim = float("inf")
+            
+            while sqr <= curr:
+                minim = min(minim , dfs(curr%sqr) + (curr//sqr))
+                ele += 1
+                sqr = ele*ele
+                
+            dicts[curr] = minim
+            return dicts[curr]
+        dicts = {}
+        
+        return dfs(n)
