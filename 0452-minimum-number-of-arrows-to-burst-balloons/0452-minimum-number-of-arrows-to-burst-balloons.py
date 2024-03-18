@@ -5,7 +5,8 @@ class Solution:
         count = 1
         for index in range(len(points)):
             if curr[0] <= points[index][0] <= curr[1]:
-                curr = [curr[0], min(points[index][1], curr[1])]
+                if points[index][1] < curr[1]:
+                    curr[1] = points[index][1]
             else:
                 count += 1
                 curr = points[index]
