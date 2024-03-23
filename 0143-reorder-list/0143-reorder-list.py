@@ -8,28 +8,31 @@ class Solution:
         """
         Do not return anything, modify head in-place instead.
         """
-        self.flag = False
-        self.curr = head
-        self.dfs(head)
+        stack = []
+        fast = head
+        slow = head
+        while fast.next and fast.next.next:
+            fast = fast.next.next
+            slow = slow.next  
+            
+        if fast == slow: return head
+        
+        slow = slow.next
+        while slow:
+            temp = slow.next
+            slow.next = None
+            stack.append(slow)
+            slow = temp
+            
+        runner = head
+        while stack:
+            temp = runner.next
+            runner.next = stack.pop()
+            runner = runner.next
+            if runner and runner != temp:
+                runner.next = temp
+                runner = runner.next
+            if not stack:
+                runner.next = None
+                
         return head
-    def dfs(self,node):
-        
-        if not node: return 
-        self.dfs(node.next)
-        
-        if self.flag or self.curr == None:
-            self.flag = True
-            return
-        if self.curr.next == node:
-            self.curr.next.next = None
-            self.flag = True
-            return
-        if self.curr == node or not self.curr.next:
-            node.next = None
-            self.flag = True
-            return
-        temp = self.curr.next
-        self.curr.next = node
-        node.next = temp
-        self.curr = temp
-        
