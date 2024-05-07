@@ -5,24 +5,33 @@
 #         self.next = next
 class Solution:
     def doubleIt(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        sys.set_int_max_str_digits(100000)
         val = 0
         runner = head
+        arr = []
         while runner:
-            val = (val*10) + runner.val
+            arr.append(runner.val)
             runner = runner.next
-            
-        strs = str(2*val)
+        temp = 0
+        for idx in range(len(arr)-1,-1,-1):
+            curr = str((arr[idx]*2)+temp)
+            arr[idx] = int(curr[0])
+            temp = 0
+            if len(curr) >1:
+                arr[idx] = int(curr[1])
+                temp = int(curr[0])
         index = 0
         runner = head
         before = head
+        if temp:
+            head.val = temp
+            runner = runner.next
         while runner:
-            runner.val = int(strs[index])
+            runner.val = arr[index]
             index += 1
             before = runner
             runner = runner.next
-        if index <len(strs):
-            before.next = ListNode(int(strs[index]))
+        if index < len(arr):
+            before.next = ListNode(arr[-1])
             
         return head
             
