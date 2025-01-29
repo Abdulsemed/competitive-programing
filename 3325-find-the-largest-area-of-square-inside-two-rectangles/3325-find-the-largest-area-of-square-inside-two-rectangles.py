@@ -1,16 +1,16 @@
 class Solution:
     def largestSquareArea(self, bottomLeft: List[List[int]], topRight: List[List[int]]) -> int:
         maximumArea = 0
-        bl = []
-        tr = []
-        for index in range(len(bottomLeft)):
-            bl.append([index, bottomLeft[index]])
-            tr.append(topRight[index])
+        # bl = []
+        # tr = []
+        # for index in range(len(bottomLeft)):
+        #     bl.append([index, bottomLeft[index]])
+        #     tr.append(topRight[index])
 
-        bl.sort(key=lambda x:(x[1]))
-        for index in range(len(bottomLeft)):
-            bottomLeft[index] = bl[index][1]
-            topRight[index] = tr[bl[index][0]]
+        # bl.sort(key=lambda x:(x[1]))
+        # for index in range(len(bottomLeft)):
+        #     bottomLeft[index] = bl[index][1]
+        #     topRight[index] = tr[bl[index][0]]
         # print(bottomLeft)
         # print(topRight)
         for index in range(len(bottomLeft)):
