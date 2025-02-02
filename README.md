@@ -4,6 +4,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Array
 |  |
 | ------- |
+| [1056-capacity-to-ship-packages-within-d-days](https://github.com/Abdulsemed/competitive-programing/tree/master/1056-capacity-to-ship-packages-within-d-days) |
 | [3519-find-the-number-of-winning-players](https://github.com/Abdulsemed/competitive-programing/tree/master/3519-find-the-number-of-winning-players) |
 ## Hash Table
 |  |
@@ -13,4 +14,8 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [3519-find-the-number-of-winning-players](https://github.com/Abdulsemed/competitive-programing/tree/master/3519-find-the-number-of-winning-players) |
+## Binary Search
+|  |
+| ------- |
+| [1056-capacity-to-ship-packages-within-d-days](https://github.com/Abdulsemed/competitive-programing/tree/master/1056-capacity-to-ship-packages-within-d-days) |
 <!---LeetCode Topics End-->
