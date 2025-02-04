@@ -27,4 +27,16 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [3326-count-pairs-of-connectable-servers-in-a-weighted-tree-network](https://github.com/Abdulsemed/competitive-programing/tree/master/3326-count-pairs-of-connectable-servers-in-a-weighted-tree-network) |
+## String
+|  |
+| ------- |
+| [1648-minimum-insertions-to-balance-a-parentheses-string](https://github.com/Abdulsemed/competitive-programing/tree/master/1648-minimum-insertions-to-balance-a-parentheses-string) |
+## Stack
+|  |
+| ------- |
+| [1648-minimum-insertions-to-balance-a-parentheses-string](https://github.com/Abdulsemed/competitive-programing/tree/master/1648-minimum-insertions-to-balance-a-parentheses-string) |
+## Greedy
+|  |
+| ------- |
+| [1648-minimum-insertions-to-balance-a-parentheses-string](https://github.com/Abdulsemed/competitive-programing/tree/master/1648-minimum-insertions-to-balance-a-parentheses-string) |
 <!---LeetCode Topics End-->
