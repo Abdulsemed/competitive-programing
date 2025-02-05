@@ -5,6 +5,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [1056-capacity-to-ship-packages-within-d-days](https://github.com/Abdulsemed/competitive-programing/tree/master/1056-capacity-to-ship-packages-within-d-days) |
+| [1930-maximum-number-of-consecutive-values-you-can-make](https://github.com/Abdulsemed/competitive-programing/tree/master/1930-maximum-number-of-consecutive-values-you-can-make) |
 | [3326-count-pairs-of-connectable-servers-in-a-weighted-tree-network](https://github.com/Abdulsemed/competitive-programing/tree/master/3326-count-pairs-of-connectable-servers-in-a-weighted-tree-network) |
 | [3519-find-the-number-of-winning-players](https://github.com/Abdulsemed/competitive-programing/tree/master/3519-find-the-number-of-winning-players) |
 ## Hash Table
@@ -39,4 +40,9 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [1648-minimum-insertions-to-balance-a-parentheses-string](https://github.com/Abdulsemed/competitive-programing/tree/master/1648-minimum-insertions-to-balance-a-parentheses-string) |
+| [1930-maximum-number-of-consecutive-values-you-can-make](https://github.com/Abdulsemed/competitive-programing/tree/master/1930-maximum-number-of-consecutive-values-you-can-make) |
+## Sorting
+|  |
+| ------- |
+| [1930-maximum-number-of-consecutive-values-you-can-make](https://github.com/Abdulsemed/competitive-programing/tree/master/1930-maximum-number-of-consecutive-values-you-can-make) |
 <!---LeetCode Topics End-->
