@@ -27,10 +27,12 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Tree
 |  |
 | ------- |
+| [1008-binary-tree-cameras](https://github.com/Abdulsemed/competitive-programing/tree/master/1008-binary-tree-cameras) |
 | [3326-count-pairs-of-connectable-servers-in-a-weighted-tree-network](https://github.com/Abdulsemed/competitive-programing/tree/master/3326-count-pairs-of-connectable-servers-in-a-weighted-tree-network) |
 ## Depth-First Search
 |  |
 | ------- |
+| [1008-binary-tree-cameras](https://github.com/Abdulsemed/competitive-programing/tree/master/1008-binary-tree-cameras) |
 | [3326-count-pairs-of-connectable-servers-in-a-weighted-tree-network](https://github.com/Abdulsemed/competitive-programing/tree/master/3326-count-pairs-of-connectable-servers-in-a-weighted-tree-network) |
 ## String
 |  |
@@ -57,6 +59,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Dynamic Programming
 |  |
 | ------- |
+| [1008-binary-tree-cameras](https://github.com/Abdulsemed/competitive-programing/tree/master/1008-binary-tree-cameras) |
 | [3437-maximum-total-damage-with-spell-casting](https://github.com/Abdulsemed/competitive-programing/tree/master/3437-maximum-total-damage-with-spell-casting) |
 ## Breadth-First Search
 |  |
@@ -66,4 +69,8 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [1229-shortest-path-with-alternating-colors](https://github.com/Abdulsemed/competitive-programing/tree/master/1229-shortest-path-with-alternating-colors) |
+## Binary Tree
+|  |
+| ------- |
+| [1008-binary-tree-cameras](https://github.com/Abdulsemed/competitive-programing/tree/master/1008-binary-tree-cameras) |
 <!---LeetCode Topics End-->
