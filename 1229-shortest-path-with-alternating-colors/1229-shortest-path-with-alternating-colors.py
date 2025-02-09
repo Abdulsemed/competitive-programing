@@ -14,8 +14,6 @@ class Solution:
             node,color, count = queue.popleft()
             if ans[node] == -1:
                 ans[node] = count
-            else:
-                ans[node] = min(ans[node], count)
             for child,clr in graph[node]:
                 if clr != color:
                     if (child,clr) not in visited:
