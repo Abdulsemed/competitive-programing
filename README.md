@@ -58,4 +58,12 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [3437-maximum-total-damage-with-spell-casting](https://github.com/Abdulsemed/competitive-programing/tree/master/3437-maximum-total-damage-with-spell-casting) |
+## Breadth-First Search
+|  |
+| ------- |
+| [1229-shortest-path-with-alternating-colors](https://github.com/Abdulsemed/competitive-programing/tree/master/1229-shortest-path-with-alternating-colors) |
+## Graph
+|  |
+| ------- |
+| [1229-shortest-path-with-alternating-colors](https://github.com/Abdulsemed/competitive-programing/tree/master/1229-shortest-path-with-alternating-colors) |
 <!---LeetCode Topics End-->
