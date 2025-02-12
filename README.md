@@ -4,6 +4,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Array
 |  |
 | ------- |
+| [0794-swim-in-rising-water](https://github.com/Abdulsemed/competitive-programing/tree/master/0794-swim-in-rising-water) |
 | [1056-capacity-to-ship-packages-within-d-days](https://github.com/Abdulsemed/competitive-programing/tree/master/1056-capacity-to-ship-packages-within-d-days) |
 | [1930-maximum-number-of-consecutive-values-you-can-make](https://github.com/Abdulsemed/competitive-programing/tree/master/1930-maximum-number-of-consecutive-values-you-can-make) |
 | [3326-count-pairs-of-connectable-servers-in-a-weighted-tree-network](https://github.com/Abdulsemed/competitive-programing/tree/master/3326-count-pairs-of-connectable-servers-in-a-weighted-tree-network) |
@@ -22,6 +23,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Binary Search
 |  |
 | ------- |
+| [0794-swim-in-rising-water](https://github.com/Abdulsemed/competitive-programing/tree/master/0794-swim-in-rising-water) |
 | [1056-capacity-to-ship-packages-within-d-days](https://github.com/Abdulsemed/competitive-programing/tree/master/1056-capacity-to-ship-packages-within-d-days) |
 | [3437-maximum-total-damage-with-spell-casting](https://github.com/Abdulsemed/competitive-programing/tree/master/3437-maximum-total-damage-with-spell-casting) |
 ## Tree
@@ -32,6 +34,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Depth-First Search
 |  |
 | ------- |
+| [0794-swim-in-rising-water](https://github.com/Abdulsemed/competitive-programing/tree/master/0794-swim-in-rising-water) |
 | [1008-binary-tree-cameras](https://github.com/Abdulsemed/competitive-programing/tree/master/1008-binary-tree-cameras) |
 | [3326-count-pairs-of-connectable-servers-in-a-weighted-tree-network](https://github.com/Abdulsemed/competitive-programing/tree/master/3326-count-pairs-of-connectable-servers-in-a-weighted-tree-network) |
 ## String
@@ -64,6 +67,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Breadth-First Search
 |  |
 | ------- |
+| [0794-swim-in-rising-water](https://github.com/Abdulsemed/competitive-programing/tree/master/0794-swim-in-rising-water) |
 | [1229-shortest-path-with-alternating-colors](https://github.com/Abdulsemed/competitive-programing/tree/master/1229-shortest-path-with-alternating-colors) |
 ## Graph
 |  |
@@ -73,4 +77,16 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [1008-binary-tree-cameras](https://github.com/Abdulsemed/competitive-programing/tree/master/1008-binary-tree-cameras) |
+## Union Find
+|  |
+| ------- |
+| [0794-swim-in-rising-water](https://github.com/Abdulsemed/competitive-programing/tree/master/0794-swim-in-rising-water) |
+## Heap (Priority Queue)
+|  |
+| ------- |
+| [0794-swim-in-rising-water](https://github.com/Abdulsemed/competitive-programing/tree/master/0794-swim-in-rising-water) |
+## Matrix
+|  |
+| ------- |
+| [0794-swim-in-rising-water](https://github.com/Abdulsemed/competitive-programing/tree/master/0794-swim-in-rising-water) |
 <!---LeetCode Topics End-->
