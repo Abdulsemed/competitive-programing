@@ -9,7 +9,7 @@ class Solution:
             
             queue = [(index,0,0)]
             while queue:
-                row,col,count = heapq.heappop(queue)
+                row,col,count = queue.pop()
                 moves = max(moves, count)
                 if (row,col) in visited:
                     continue
@@ -19,7 +19,7 @@ class Solution:
                     new_c = _c + col
                     if inbound(new_r,new_c) and (new_r,new_c) not in visited:
                         if grid[new_r][new_c] > grid[row][col]:
-                            heapq.heappush(queue,(new_r,new_c, count+1))
+                            queue.append((new_r,new_c, count+1))
 
         return moves
 
