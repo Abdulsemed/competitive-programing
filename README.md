@@ -7,6 +7,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0794-swim-in-rising-water](https://github.com/Abdulsemed/competitive-programing/tree/master/0794-swim-in-rising-water) |
 | [1056-capacity-to-ship-packages-within-d-days](https://github.com/Abdulsemed/competitive-programing/tree/master/1056-capacity-to-ship-packages-within-d-days) |
 | [1930-maximum-number-of-consecutive-values-you-can-make](https://github.com/Abdulsemed/competitive-programing/tree/master/1930-maximum-number-of-consecutive-values-you-can-make) |
+| [2176-parallel-courses-iii](https://github.com/Abdulsemed/competitive-programing/tree/master/2176-parallel-courses-iii) |
 | [2794-maximum-number-of-moves-in-a-grid](https://github.com/Abdulsemed/competitive-programing/tree/master/2794-maximum-number-of-moves-in-a-grid) |
 | [3326-count-pairs-of-connectable-servers-in-a-weighted-tree-network](https://github.com/Abdulsemed/competitive-programing/tree/master/3326-count-pairs-of-connectable-servers-in-a-weighted-tree-network) |
 | [3437-maximum-total-damage-with-spell-casting](https://github.com/Abdulsemed/competitive-programing/tree/master/3437-maximum-total-damage-with-spell-casting) |
@@ -67,6 +68,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [1008-binary-tree-cameras](https://github.com/Abdulsemed/competitive-programing/tree/master/1008-binary-tree-cameras) |
+| [2176-parallel-courses-iii](https://github.com/Abdulsemed/competitive-programing/tree/master/2176-parallel-courses-iii) |
 | [2794-maximum-number-of-moves-in-a-grid](https://github.com/Abdulsemed/competitive-programing/tree/master/2794-maximum-number-of-moves-in-a-grid) |
 | [3437-maximum-total-damage-with-spell-casting](https://github.com/Abdulsemed/competitive-programing/tree/master/3437-maximum-total-damage-with-spell-casting) |
 ## Breadth-First Search
@@ -78,6 +80,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [1229-shortest-path-with-alternating-colors](https://github.com/Abdulsemed/competitive-programing/tree/master/1229-shortest-path-with-alternating-colors) |
+| [2176-parallel-courses-iii](https://github.com/Abdulsemed/competitive-programing/tree/master/2176-parallel-courses-iii) |
 ## Binary Tree
 |  |
 | ------- |
@@ -95,4 +98,8 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0794-swim-in-rising-water](https://github.com/Abdulsemed/competitive-programing/tree/master/0794-swim-in-rising-water) |
 | [2794-maximum-number-of-moves-in-a-grid](https://github.com/Abdulsemed/competitive-programing/tree/master/2794-maximum-number-of-moves-in-a-grid) |
+## Topological Sort
+|  |
+| ------- |
+| [2176-parallel-courses-iii](https://github.com/Abdulsemed/competitive-programing/tree/master/2176-parallel-courses-iii) |
 <!---LeetCode Topics End-->
