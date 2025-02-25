@@ -7,6 +7,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0794-swim-in-rising-water](https://github.com/Abdulsemed/competitive-programing/tree/master/0794-swim-in-rising-water) |
 | [1056-capacity-to-ship-packages-within-d-days](https://github.com/Abdulsemed/competitive-programing/tree/master/1056-capacity-to-ship-packages-within-d-days) |
 | [1140-distant-barcodes](https://github.com/Abdulsemed/competitive-programing/tree/master/1140-distant-barcodes) |
+| [1288-maximum-subarray-sum-with-one-deletion](https://github.com/Abdulsemed/competitive-programing/tree/master/1288-maximum-subarray-sum-with-one-deletion) |
 | [1930-maximum-number-of-consecutive-values-you-can-make](https://github.com/Abdulsemed/competitive-programing/tree/master/1930-maximum-number-of-consecutive-values-you-can-make) |
 | [2176-parallel-courses-iii](https://github.com/Abdulsemed/competitive-programing/tree/master/2176-parallel-courses-iii) |
 | [2794-maximum-number-of-moves-in-a-grid](https://github.com/Abdulsemed/competitive-programing/tree/master/2794-maximum-number-of-moves-in-a-grid) |
@@ -73,6 +74,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [1008-binary-tree-cameras](https://github.com/Abdulsemed/competitive-programing/tree/master/1008-binary-tree-cameras) |
+| [1288-maximum-subarray-sum-with-one-deletion](https://github.com/Abdulsemed/competitive-programing/tree/master/1288-maximum-subarray-sum-with-one-deletion) |
 | [2176-parallel-courses-iii](https://github.com/Abdulsemed/competitive-programing/tree/master/2176-parallel-courses-iii) |
 | [2794-maximum-number-of-moves-in-a-grid](https://github.com/Abdulsemed/competitive-programing/tree/master/2794-maximum-number-of-moves-in-a-grid) |
 | [3437-maximum-total-damage-with-spell-casting](https://github.com/Abdulsemed/competitive-programing/tree/master/3437-maximum-total-damage-with-spell-casting) |
